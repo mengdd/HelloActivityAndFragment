@@ -8,23 +8,21 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/basic_activity_a"
-        android:textColor="@color/dark_blue"
+        android:text="@string/basic_activity_b"
         android:textSize="@dimen/text_size_normal" />
 
+
     <Button
-        android:id="@+id/basic_turn_to_b_button"
+        android:id="@+id/basic_turn_to_a_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/basic_turn_to_activity_b"
-        android:textSize="@dimen/text_size_normal" />
+        android:background="@color/apple_green"
+        android:text="@string/basic_turn_to_activity_a" />
 
     <Button
-        android:id="@+id/basic_finish_a_button"
+        android:id="@+id/basic_finish_b_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/water_melon_red"
-        android:text="@string/basic_finish_button"
-        android:textSize="@dimen/text_size_normal" />
-
+        android:text="@string/basic_finish_button" />
 </LinearLayout>

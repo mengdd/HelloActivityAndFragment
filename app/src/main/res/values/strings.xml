@@ -9,5 +9,9 @@
 
 
     <!--Basic Activity And Lifecycle-->
-    <string name="activity_a">Activity A</string>
+    <string name="basic_activity_a">Activity A</string>
+    <string name="basic_activity_b">Activity B</string>
+    <string name="basic_turn_to_activity_b">Turn to Activity B</string>
+    <string name="basic_turn_to_activity_a">Turn to Activity A</string>
+    <string name="basic_finish_button">Finish This Activity</string>
 </resources>
