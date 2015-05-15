@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!--Sample Names-->
+    <string name="basic_activity_lifecycle">Basic Activity And Lifecycle</string>
+
+
+    <!--Basic Activity And Lifecycle-->
+    <string name="activity_a">Activity A</string>
 </resources>
