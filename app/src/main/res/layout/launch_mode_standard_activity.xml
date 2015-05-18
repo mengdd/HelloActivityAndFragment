@@ -11,6 +11,14 @@
         android:text="@string/launch_mode_standard"
         android:textSize="@dimen/text_size_normal" />
 
+    <TextView
+        android:id="@+id/launch_mode_stack_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/launch_mode_stack_info"
+        android:textColor="@color/water_melon_red"
+        android:textSize="@dimen/text_size_normal" />
+
     <Button
         android:id="@+id/launch_mode_start_single_top_button"
         android:layout_width="match_parent"
