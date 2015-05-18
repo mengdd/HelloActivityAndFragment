@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
+import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mSamples = new Sample[]{
-                new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class)
-
+                new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),
+                new Sample(R.string.launch_mode_demo, StandardActivity.class)
         };
 
         mListView = (ListView) findViewById(R.id.samples_list);

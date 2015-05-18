@@ -6,6 +6,7 @@
 
     <!--Sample Names-->
     <string name="basic_activity_lifecycle">Basic Activity And Lifecycle</string>
+    <string name="launch_mode_demo">Launch Mode Demo</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -14,4 +15,9 @@
     <string name="basic_turn_to_activity_b">Turn to Activity B</string>
     <string name="basic_turn_to_activity_a">Turn to Activity A</string>
     <string name="basic_finish_button">Finish This Activity</string>
+
+    <!--Launch Mode-->
+    <string name="launch_mode_standard">Standard</string>
+    <string name="launch_mode_single_top">Single Top</string>
+    <string name="launch_mode_start_single_top">Start Single Top</string>
 </resources>

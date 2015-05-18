@@ -18,6 +18,12 @@
         </activity>
         <activity android:name=".activity.BasicActivityA" />
         <activity android:name=".activity.BasicActivityB" />
+        <activity
+            android:name=".launchmode.StandardActivity"
+            android:launchMode="standard" />
+        <activity
+            android:name=".launchmode.SingleTopActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>
