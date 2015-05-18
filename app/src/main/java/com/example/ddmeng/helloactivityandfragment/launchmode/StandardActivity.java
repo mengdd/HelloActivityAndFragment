@@ -13,7 +13,7 @@ import com.example.ddmeng.helloactivityandfragment.utils.TaskUtils;
 
 public class StandardActivity extends Activity {
     private static final String LOG_TAG = "Launch Mode";
-    private TextView mStackInfo = null;
+    private Button mStackInfo = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,13 @@ public class StandardActivity extends Activity {
             }
         });
 
-        mStackInfo = (TextView) findViewById(R.id.launch_mode_stack_info);
-        updateStackInfo();
+        mStackInfo = (Button) findViewById(R.id.launch_mode_update_stack_info);
+        mStackInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateStackInfo();
+            }
+        });
     }
 
     private void updateStackInfo() {

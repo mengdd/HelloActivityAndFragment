@@ -20,5 +20,5 @@
     <string name="launch_mode_standard">Standard</string>
     <string name="launch_mode_single_top">Single Top</string>
     <string name="launch_mode_start_single_top">Start Single Top</string>
-    <string name="launch_mode_stack_info">Stack Info</string>
+    <string name="launch_mode_stack_info">Update Stack Info</string>
 </resources>

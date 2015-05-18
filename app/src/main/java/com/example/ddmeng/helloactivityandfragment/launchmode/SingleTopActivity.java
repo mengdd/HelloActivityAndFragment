@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 import com.example.ddmeng.helloactivityandfragment.utils.TaskUtils;
@@ -27,6 +29,25 @@ public class SingleTopActivity extends Activity {
 
         //Conclusions: Do NOT call startActivity() twice
         // Because before onCreate() invoked, the singleTop activity are still not considered as on the top of the stack
+
+        TaskUtils.getCurrentTopActivityName(this);
+        // top activity: this SingleTopActivity
+
+
+        Button startSingleTopButton = (Button) findViewById(R.id.launch_mode_start_single_top_button);
+        startSingleTopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(SingleTopActivity.this, SingleTopActivity.class);
+                startActivity(intent);
+
+                //The singleTop launch mode: when the activity has instance on the top of stack of target task, reuse it.
+                //otherwise, it's the same as the standard launch mode.
+                //reuse it means, the onNewIntent() will be called to handle the new intent
+
+            }
+        });
     }
 
     @Override
@@ -59,5 +80,7 @@ public class SingleTopActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Log.i(LOG_TAG, "Single Top Activity, onDestroy(), " + this.hashCode());
+        TaskUtils.getCurrentTopActivityName(this);
+        //the top activity we got is still singleTop activity here
     }
 }
