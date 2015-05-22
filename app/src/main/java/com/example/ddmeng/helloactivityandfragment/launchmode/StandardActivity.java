@@ -20,8 +20,8 @@ public class StandardActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Log.i(LOG_TAG, "Standard Activity onCreate()");
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_mode_standard_activity);
         ButterKnife.inject(this);
     }
@@ -47,26 +47,38 @@ public class StandardActivity extends Activity {
     }
 
     @Override
+    protected void onRestart() {
+        Log.i(LOG_TAG, this.getClass().getSimpleName() + " onReStart()");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(LOG_TAG, this.getClass().getSimpleName() + " onStart()");
+        super.onStart();
+    }
+
+    @Override
     protected void onResume() {
-        super.onResume();
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onResume()");
+        super.onResume();
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onPause()");
+        super.onPause();
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onStop()");
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onDestroy()");
+        super.onDestroy();
     }
 }

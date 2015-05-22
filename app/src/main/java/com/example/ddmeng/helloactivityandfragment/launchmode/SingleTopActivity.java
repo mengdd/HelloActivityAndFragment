@@ -18,8 +18,8 @@ public class SingleTopActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_mode_single_top_activity);
+        super.onCreate(savedInstanceState);
         ButterKnife.inject(this);
 
         Log.i(LOG_TAG, "Single Top Activity, onCreate(), " + this.hashCode());
@@ -51,34 +51,46 @@ public class SingleTopActivity extends Activity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
         Log.i(LOG_TAG, "Single Top Activity, onNewIntent(), " + this.hashCode());
+        super.onNewIntent(intent);
         //strange: this log is never shown
     }
 
     @Override
+    protected void onRestart() {
+        Log.i(LOG_TAG, "Single Top Activity, onRestart(), " + this.hashCode());
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStart() {
+        Log.i(LOG_TAG, "Single Top Activity, onStart(), " + this.hashCode());
+        super.onStart();
+    }
+
+    @Override
     protected void onResume() {
-        super.onResume();
         Log.i(LOG_TAG, "Single Top Activity, onResume(), " + this.hashCode());
+        super.onResume();
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
         Log.i(LOG_TAG, "Single Top Activity, onPause(), " + this.hashCode());
+        super.onPause();
 
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         Log.i(LOG_TAG, "Single Top Activity, onStop(), " + this.hashCode());
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         Log.i(LOG_TAG, "Single Top Activity, onDestroy(), " + this.hashCode());
+        super.onDestroy();
         TaskUtils.getCurrentTopActivityName(this);
         //the top activity we got is still singleTop activity here
     }
