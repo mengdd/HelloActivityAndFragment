@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 
 import com.example.ddmeng.helloactivityandfragment.R;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BasicActivityA extends Activity {
     private static final String LOG_TAG = "Basic Activity";
@@ -18,22 +19,19 @@ public class BasicActivityA extends Activity {
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onCreate()");
         setContentView(R.layout.basic_activity_a);
 
-        Button turnToButton = (Button) findViewById(R.id.basic_turn_to_b_button);
-        turnToButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(BasicActivityA.this, BasicActivityB.class);
-                startActivity(intent);
-            }
-        });
-        Button finishButton = (Button) findViewById(R.id.basic_finish_a_button);
-        finishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        ButterKnife.inject(this);
+    }
+
+    @OnClick(R.id.basic_turn_to_b_button)
+    void turnToBActivity() {
+        Intent intent = new Intent();
+        intent.setClass(BasicActivityA.this, BasicActivityB.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.basic_finish_a_button)
+    void finishA() {
+        finish();
     }
 
     @Override

@@ -14,31 +14,35 @@ import android.widget.ListView;
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnItemClick;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private static Sample[] mSamples;
-    private ListView mListView;
+    @InjectView(R.id.samples_list)
+    ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
 
         mSamples = new Sample[]{
                 new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),
                 new Sample(R.string.launch_mode_demo, StandardActivity.class)
         };
 
-        mListView = (ListView) findViewById(R.id.samples_list);
         mListView.setAdapter(new ArrayAdapter<Sample>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Launch the sample associated with this list position.
-                startActivity(new Intent(MainActivity.this, mSamples[position].activityClass));
-            }
-        });
+    }
+
+    @OnItemClick(R.id.samples_list)
+    void onSampleListClick(AdapterView<?> parent, View view, int position, long id) {
+        // Launch the sample associated with this list position.
+        startActivity(new Intent(MainActivity.this, mSamples[position].activityClass));
     }
 
     @Override
