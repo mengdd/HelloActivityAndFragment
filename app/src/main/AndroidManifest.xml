@@ -26,6 +26,7 @@
         <activity
             android:name=".launchmode.SingleTopActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".fragment.FragmentBasicActivity" />
     </application>
 
 </manifest>

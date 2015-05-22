@@ -5,8 +5,9 @@
     <string name="action_settings">Settings</string>
 
     <!--Sample Names-->
-    <string name="basic_activity_lifecycle">Basic Activity And Lifecycle</string>
+    <string name="basic_activity_lifecycle">Basic Activity and Lifecycle</string>
     <string name="launch_mode_demo">Launch Mode Demo</string>
+    <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -21,4 +22,11 @@
     <string name="launch_mode_single_top">Single Top</string>
     <string name="launch_mode_start_single_top">Start Single Top</string>
     <string name="launch_mode_stack_info">Update Stack Info</string>
+
+    <!--Basic Fragment-->
+    <string name="fragment_basic_activity_text">Fragment Basic Activity</string>
+    <string name="fragment_a_text">Fragment A</string>
+    <string name="fragment_b_text">Fragment B</string>
+    <string name="fragment_add_b_fragment">Click to ADD Fragment B</string>
+    <string name="fragment_remove_b_fragment">Click to Remove Fragment B</string>
 </resources>
