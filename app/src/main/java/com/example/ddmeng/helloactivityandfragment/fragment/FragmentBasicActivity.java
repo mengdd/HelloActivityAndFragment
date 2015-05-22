@@ -29,6 +29,10 @@ public class FragmentBasicActivity extends Activity {
     @OnCheckedChanged(R.id.fragment_b_control_toggle)
     void toggleFragmentB(CompoundButton toggleButton, boolean checked) {
         Log.d(LOG_TAG, "toggle " + checked);
+        //this will have bug when "Do no keep activities" turned on
+        //because, when the FragmentB is shown, home exit and enter again, the system auto recover the fragment
+        //the checked status is also recovered, this method will invoke once, with the checked is true
+        //So, the fragmentB is added twice, and remove button can only remove one of them
         if (checked) {
             addFragmentB();
         } else {
