@@ -14,6 +14,8 @@ import com.example.ddmeng.helloactivityandfragment.R;
 public class FragmentB extends Fragment {
     private static final String LOG_TAG = FragmentB.class.getSimpleName();
 
+    public static final String TAG = "FragmentB";
+
     @Override
     public void onAttach(Activity activity) {
         Log.i(LOG_TAG, "onAttach()");
