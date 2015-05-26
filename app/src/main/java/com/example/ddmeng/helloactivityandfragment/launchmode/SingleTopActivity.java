@@ -5,16 +5,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 import com.example.ddmeng.helloactivityandfragment.utils.TaskUtils;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class SingleTopActivity extends Activity {
 
     private static final String LOG_TAG = "Launch Mode";
+    @InjectView(R.id.current_task)
+    TextView mTaskText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class SingleTopActivity extends Activity {
         ButterKnife.inject(this);
 
         Log.i(LOG_TAG, "Single Top Activity, onCreate(), " + this.hashCode());
+        Log.i(LOG_TAG, "task id: " + this.getTaskId());
+        mTaskText.setText("Currrent Task: " + this.getTaskId());
 
         //strange phenomenon:
         // When start this activity, startActivity() is called twice deliberately

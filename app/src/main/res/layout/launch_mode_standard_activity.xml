@@ -11,6 +11,13 @@
         android:text="@string/launch_mode_standard"
         android:textSize="@dimen/text_size_normal" />
 
+    <TextView
+        android:id="@+id/current_task"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_blue"
+        android:textSize="@dimen/text_size_normal" />
+
     <Button
         android:id="@+id/launch_mode_update_stack_info"
         android:layout_width="match_parent"
@@ -25,5 +32,13 @@
         android:layout_height="wrap_content"
         android:text="@string/launch_mode_start_single_top"
         android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/launch_mode_start_single_task_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/launch_mode_start_single_task"
+        android:textSize="@dimen/text_size_normal" />
+
 
 </LinearLayout>

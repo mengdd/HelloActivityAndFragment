@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ddmeng.helloactivityandfragment">
 
-    <uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -27,6 +27,11 @@
             android:name=".launchmode.SingleTopActivity"
             android:launchMode="singleTop" />
         <activity android:name=".fragment.FragmentBasicActivity" />
+        <activity
+            android:name=".launchmode.SingleTaskActivity"
+            android:label="@string/title_activity_single_task"
+            android:launchMode="singleTask"
+            android:taskAffinity=".singleTask"/>
     </application>
 
 </manifest>

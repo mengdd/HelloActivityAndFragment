@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 import com.example.ddmeng.helloactivityandfragment.utils.TaskUtils;
@@ -18,12 +19,17 @@ public class StandardActivity extends Activity {
     @InjectView(R.id.launch_mode_update_stack_info)
     Button mStackInfo = null;
 
+    @InjectView(R.id.current_task)
+    TextView mTaskText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(LOG_TAG, "Standard Activity onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_mode_standard_activity);
         ButterKnife.inject(this);
+        Log.i(LOG_TAG, "task id: " + this.getTaskId());
+        mTaskText.setText("Currrent Task: " + this.getTaskId());
     }
 
     @OnClick(R.id.launch_mode_start_single_top_button)
@@ -32,6 +38,15 @@ public class StandardActivity extends Activity {
 
         Intent intent = new Intent();
         intent.setClass(StandardActivity.this, SingleTopActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.launch_mode_start_single_task_button)
+    void startSingleTaskActivity() {
+        Log.i(LOG_TAG, "start single task button click");
+
+        Intent intent = new Intent();
+        intent.setClass(StandardActivity.this, SingleTaskActivity.class);
         startActivity(intent);
     }
 
