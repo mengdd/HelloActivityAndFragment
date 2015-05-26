@@ -48,6 +48,8 @@ public class StandardActivity extends Activity {
         Intent intent = new Intent();
         intent.setClass(StandardActivity.this, SingleTaskActivity.class);
         startActivity(intent);
+        // If the singleTask want to be in a different task, taskAffinity should be specified.
+        // every time start a new singleTask activity from here, new task id++
     }
 
     @OnClick(R.id.launch_mode_update_stack_info)

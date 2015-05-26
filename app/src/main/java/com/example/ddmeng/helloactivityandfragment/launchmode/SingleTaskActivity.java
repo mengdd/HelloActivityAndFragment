@@ -13,6 +13,7 @@ import com.example.ddmeng.helloactivityandfragment.R;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class SingleTaskActivity extends AppCompatActivity {
 
@@ -32,6 +33,37 @@ public class SingleTaskActivity extends AppCompatActivity {
         //if taskAffinity attribute is not specified, the taskId is the same as the activity start it.
         // when set android:taskAffinity=".singleTask" in manifest activity, this activity will have a different task Id
 
+    }
+
+    @OnClick(R.id.launch_mode_start_standard)
+    void startStandardActivity() {
+        Log.i(LOG_TAG, "start standard button click");
+
+        Intent intent = new Intent();
+        intent.setClass(SingleTaskActivity.this, StandardActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.launch_mode_start_single_top)
+    void startSingleTopActivity() {
+        Log.i(LOG_TAG, "start single top button click");
+
+        Intent intent = new Intent();
+        intent.setClass(SingleTaskActivity.this, SingleTopActivity.class);
+        startActivity(intent);
+
+        //start new standard or singleTop activity from singleTask, the new activities will be in the singleTask's task
+    }
+
+    @OnClick(R.id.launch_mode_start_single_task)
+    void startSingleTaskActivity() {
+        Log.i(LOG_TAG, "start single task button click");
+
+        Intent intent = new Intent();
+        intent.setClass(SingleTaskActivity.this, SingleTaskActivity.class);
+        startActivity(intent);
+        //this will not create a new instance of the activity, callbacks after the click event are:
+        //onPause(), onNewIntent(), onResume()
     }
 
     @Override
