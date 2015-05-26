@@ -31,7 +31,11 @@
             android:name=".launchmode.SingleTaskActivity"
             android:label="@string/title_activity_single_task"
             android:launchMode="singleTask"
-            android:taskAffinity=".singleTask"/>
+            android:taskAffinity=".singleTask" />
+        <activity
+            android:name=".launchmode.SingleInstanceActivity"
+            android:label="@string/title_activity_single_instance"
+            android:launchMode="singleInstance" />
     </application>
 
 </manifest>

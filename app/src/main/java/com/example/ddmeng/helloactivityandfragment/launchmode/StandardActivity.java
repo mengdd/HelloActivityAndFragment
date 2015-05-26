@@ -52,6 +52,14 @@ public class StandardActivity extends Activity {
         // every time start a new singleTask activity from here, new task id++
     }
 
+    @OnClick(R.id.launch_mode_start_single_instance_button)
+    void startSingleInstanceActivity() {
+        Log.i(LOG_TAG, "start single instance button click");
+        Intent intent = new Intent();
+        intent.setClass(StandardActivity.this, SingleInstanceActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.launch_mode_update_stack_info)
     void updateStackInfoButtonClick() {
         updateStackInfo();

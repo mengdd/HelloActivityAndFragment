@@ -21,9 +21,11 @@
     <string name="launch_mode_standard">Standard</string>
     <string name="launch_mode_single_top">Single Top</string>
     <string name="launch_mode_single_task">Single Task</string>
+    <string name="launch_mode_single_instance">Single Instance</string>
     <string name="launch_mode_start_standard">Start Standard</string>
     <string name="launch_mode_start_single_top">Start Single Top</string>
     <string name="launch_mode_start_single_task">Start Single Task</string>
+    <string name="launch_mode_start_single_instance">Start Single Instance</string>
     <string name="launch_mode_stack_info">Update Stack Info</string>
 
     <!--Basic Fragment-->
@@ -33,4 +35,5 @@
     <string name="fragment_add_b_fragment">Click to ADD Fragment B</string>
     <string name="fragment_remove_b_fragment">Click to Remove Fragment B</string>
     <string name="title_activity_single_task">SingleTaskActivity</string>
+    <string name="title_activity_single_instance">SingleInstanceActivity</string>
 </resources>
