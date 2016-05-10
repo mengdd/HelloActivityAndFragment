@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".activity.BasicActivityA" />
         <activity android:name=".activity.BasicActivityB" />
+        <activity android:name=".fragment.NestedFragmentsDemoActivity" />
         <activity
             android:name=".launchmode.StandardActivity"
             android:launchMode="standard" />

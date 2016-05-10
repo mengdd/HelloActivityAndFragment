@@ -8,6 +8,7 @@
     <string name="basic_activity_lifecycle">Basic Activity and Lifecycle</string>
     <string name="launch_mode_demo">Launch Mode Demo</string>
     <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
+    <string name="nested_fragments">Nested Fragments</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -32,6 +33,8 @@
     <string name="fragment_basic_activity_text">Fragment Basic Activity</string>
     <string name="fragment_a_text">Fragment A</string>
     <string name="fragment_b_text">Fragment B</string>
+    <string name="fragment_c_text">Fragment C</string>
+    <string name="fragment_d_text">Fragment D</string>
     <string name="fragment_add_b_fragment">Click to ADD Fragment B</string>
     <string name="fragment_remove_b_fragment">Click to Remove Fragment B</string>
     <string name="title_activity_single_task">SingleTaskActivity</string>

@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivity;
+import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsDemoActivity;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
 import butterknife.ButterKnife;
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         mSamples = new Sample[]{
                 new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),
                 new Sample(R.string.launch_mode_demo, StandardActivity.class),
-                new Sample(R.string.basic_fragment_lifecycle, FragmentBasicActivity.class)
+                new Sample(R.string.basic_fragment_lifecycle, FragmentBasicActivity.class),
+                new Sample(R.string.nested_fragments, NestedFragmentsDemoActivity.class)
         };
 
         mListView.setAdapter(new ArrayAdapter<Sample>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));
