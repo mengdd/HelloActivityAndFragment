@@ -1,9 +1,9 @@
 package com.example.ddmeng.helloactivityandfragment.fragment;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +40,9 @@ public class FragmentC extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         Log.i(LOG_TAG, "onActivityCreated()");
         super.onActivityCreated(savedInstanceState);
+
+        // can't find fragment a, is null
+        Fragment fragmentA = getChildFragmentManager().findFragmentById(R.id.nested_fragment_a);
     }
 
     @Override
@@ -69,6 +72,15 @@ public class FragmentC extends Fragment {
     @Override
     public void onDestroyView() {
         Log.i(LOG_TAG, "onDestroyView()");
+        // Not working, getFragments() return null
+//        List<Fragment> fragments = getChildFragmentManager().getFragments();
+//        if (fragments != null) {
+//            for (Fragment f : fragments) {
+//                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
+//                ft.remove(f).commitAllowingStateLoss();
+//            }
+//        }
+
         super.onDestroyView();
     }
 
