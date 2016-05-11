@@ -1,9 +1,10 @@
 package com.example.ddmeng.helloactivityandfragment.fragment;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.ddmeng.helloactivityandfragment.R;
 
 public class FragmentC extends Fragment {
     private static final String LOG_TAG = FragmentC.class.getSimpleName();
+    private static final String NESTED_FRAGMENT_TAG = FragmentA.class.getSimpleName();
 
     @Override
     public void onAttach(Activity activity) {
@@ -42,7 +44,12 @@ public class FragmentC extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         // can't find fragment a, is null
-        Fragment fragmentA = getChildFragmentManager().findFragmentById(R.id.nested_fragment_a);
+        Fragment fragmentA = getChildFragmentManager().findFragmentByTag(NESTED_FRAGMENT_TAG);
+        if (fragmentA == null) {
+            fragmentA = new FragmentA();
+            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.fragment_container, fragmentA, NESTED_FRAGMENT_TAG).commit();
+        }
     }
 
     @Override

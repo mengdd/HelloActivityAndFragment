@@ -13,9 +13,8 @@
         android:text="@string/fragment_c_text"
         android:textSize="@dimen/text_size_normal" />
 
-    <fragment
-        android:id="@+id/nested_fragment_a"
-        class="com.example.ddmeng.helloactivityandfragment.fragment.FragmentA"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/fragment_text" />
