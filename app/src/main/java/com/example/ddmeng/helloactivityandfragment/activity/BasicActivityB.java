@@ -18,7 +18,7 @@ public class BasicActivityB extends Activity {
         Log.i(LOG_TAG, "Activity B ===" + " onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_activity_b);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.basic_turn_to_a_button)

@@ -19,7 +19,7 @@ public class BasicActivityA extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_activity_a);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnClick(R.id.basic_turn_to_b_button)

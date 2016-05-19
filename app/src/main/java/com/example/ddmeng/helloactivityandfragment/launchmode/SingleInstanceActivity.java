@@ -10,13 +10,13 @@ import android.widget.TextView;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class SingleInstanceActivity extends AppCompatActivity {
     private static final String LOG_TAG = SingleInstanceActivity.class.getSimpleName();
-    @InjectView(R.id.current_task)
+    @BindView(R.id.current_task)
     TextView mTaskText;
 
     @Override
@@ -24,7 +24,7 @@ public class SingleInstanceActivity extends AppCompatActivity {
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.launch_mode_single_instance_activity);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         Log.i(LOG_TAG, "task id: " + this.getTaskId());
         mTaskText.setText("Currrent Task: " + this.getTaskId());
     }

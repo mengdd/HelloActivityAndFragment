@@ -16,7 +16,7 @@ public class NestedFragmentsDemoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nested_fragments_activity_layout);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
         showFragment(new FragmentC(), "C");
         showFragment(new FragmentD(), "D");
     }

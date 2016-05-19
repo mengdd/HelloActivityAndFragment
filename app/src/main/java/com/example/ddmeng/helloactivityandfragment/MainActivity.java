@@ -16,22 +16,22 @@ import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivit
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsDemoActivity;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.OnItemClick;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private static Sample[] mSamples;
-    @InjectView(R.id.samples_list)
+    @BindView(R.id.samples_list)
     ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         mSamples = new Sample[]{
                 new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),

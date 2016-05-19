@@ -21,7 +21,7 @@ public class FragmentBasicActivity extends Activity {
         Log.i(LOG_TAG, this.getClass().getSimpleName() + " onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_basic_activity_layout);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
     }
 
     @OnCheckedChanged(R.id.fragment_b_control_toggle)
