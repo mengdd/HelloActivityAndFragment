@@ -9,6 +9,7 @@
     <string name="launch_mode_demo">Launch Mode Demo</string>
     <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
     <string name="nested_fragments">Nested Fragments</string>
+    <string name="fragment_with_parameters">Fragment With Parameters</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -39,4 +40,7 @@
     <string name="fragment_remove_b_fragment">Click to Remove Fragment B</string>
     <string name="title_activity_single_task">SingleTaskActivity</string>
     <string name="title_activity_single_instance">SingleInstanceActivity</string>
+
+    <!--Fragment with Parameters-->
+    <string name="submit_button">Submit</string>
 </resources>
