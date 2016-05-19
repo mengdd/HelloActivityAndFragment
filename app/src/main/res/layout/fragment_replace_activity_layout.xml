@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ToggleButton
+        android:id="@+id/fragment_b_control_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textOff="@string/fragment_add_b_fragment"
+        android:textOn="@string/fragment_remove_b_fragment"
+        android:textSize="@dimen/text_size_normal" />
+
+    <FrameLayout
+        android:id="@+id/replace_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/fragment_a"
+            android:name="com.example.ddmeng.helloactivityandfragment.fragment.FragmentA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
+</LinearLayout>

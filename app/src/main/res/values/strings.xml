@@ -10,6 +10,7 @@
     <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
     <string name="nested_fragments">Nested Fragments</string>
     <string name="fragment_with_parameters">Fragment With Parameters</string>
+    <string name="fragment_replacement">Fragment Replacement</string>
 
 
     <!--Basic Activity And Lifecycle-->
