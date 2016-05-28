@@ -21,6 +21,7 @@
         <activity android:name=".activity.BasicActivityA" />
         <activity android:name=".activity.BasicActivityB" />
         <activity android:name=".fragment.NestedFragmentsDemoActivity" />
+        <activity android:name=".fragment.NestedFragmentsInLayoutActivity" />
         <activity android:name=".fragment.FragmentWithParametersActivity" />
         <activity android:name=".fragment.FragmentReplacementActivity" />
         <activity

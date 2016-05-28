@@ -16,6 +16,7 @@ import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivit
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentReplacementActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentWithParametersActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsDemoActivity;
+import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInLayoutActivity;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
 import butterknife.BindView;
@@ -39,12 +40,13 @@ public class MainActivity extends AppCompatActivity {
                 new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),
                 new Sample(R.string.launch_mode_demo, StandardActivity.class),
                 new Sample(R.string.basic_fragment_lifecycle, FragmentBasicActivity.class),
+                new Sample(R.string.nested_fragments_in_layout, NestedFragmentsInLayoutActivity.class),
                 new Sample(R.string.nested_fragments, NestedFragmentsDemoActivity.class),
                 new Sample(R.string.fragment_with_parameters, FragmentWithParametersActivity.class),
                 new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class)
         };
 
-        mListView.setAdapter(new ArrayAdapter<Sample>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));
+        mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));
     }
 
     @OnItemClick(R.id.samples_list)
