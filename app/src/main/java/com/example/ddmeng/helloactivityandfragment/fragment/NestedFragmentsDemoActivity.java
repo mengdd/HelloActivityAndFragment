@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.ddmeng.helloactivityandfragment.R;
 
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class NestedFragmentsDemoActivity extends AppCompatActivity {
 
@@ -18,21 +19,17 @@ public class NestedFragmentsDemoActivity extends AppCompatActivity {
         setContentView(R.layout.nested_fragments_activity_layout);
         ButterKnife.bind(this);
         showFragment(new FragmentC(), "C");
-        showFragment(new FragmentD(), "D");
     }
 
     private void showFragment(Fragment fragment, String tag) {
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.container, fragment, tag).addToBackStack(tag).commit();
-        // after added below line, the exception will not happen again
-        // but it not work for other conditions
-        // getSupportFragmentManager().executePendingTransactions();
+        ft.replace(R.id.container, fragment, tag)
+                .addToBackStack(tag)
+                .commit();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (!getFragmentManager().popBackStackImmediate()) {
-            finish();
-        }
+    @OnClick(R.id.add_second)
+    void addAnotherFragment() {
+        showFragment(new FragmentD(), "D");
     }
 }

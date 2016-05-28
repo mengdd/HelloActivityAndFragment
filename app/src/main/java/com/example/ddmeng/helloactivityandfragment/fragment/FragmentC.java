@@ -32,8 +32,6 @@ public class FragmentC extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(LOG_TAG, "onCreateView()");
-        //this super method return null
-        //return super.onCreateView(inflater, container, savedInstanceState);
 
         return inflater.inflate(R.layout.fragment_c, container, false);
     }
@@ -43,12 +41,14 @@ public class FragmentC extends Fragment {
         Log.i(LOG_TAG, "onActivityCreated()");
         super.onActivityCreated(savedInstanceState);
 
-        // can't find fragment a, is null
         Fragment fragmentA = getChildFragmentManager().findFragmentByTag(NESTED_FRAGMENT_TAG);
         if (fragmentA == null) {
+            Log.i(LOG_TAG, "add new FragmentA !!");
             fragmentA = new FragmentA();
             FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.fragment_container, fragmentA, NESTED_FRAGMENT_TAG).commit();
+        } else {
+            Log.i(LOG_TAG, "found existing FragmentA, no need to add it again !!");
         }
     }
 
