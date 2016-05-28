@@ -30,6 +30,26 @@ public class FragmentE extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(LOG_TAG, "onCreateView()");
+//        View inflate = null;
+//        try {
+//            inflate = inflater.inflate(R.layout.fragment_e, container, false);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            /*
+//            at com.example.ddmeng.helloactivityandfragment.fragment.FragmentE.onCreateView(FragmentE.java:35)
+//            at android.app.Fragment.performCreateView(Fragment.java:2220)
+//            at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:973)
+//            at android.app.FragmentManagerImpl.moveToState(FragmentManager.java:1148)
+//            at android.app.FragmentManagerImpl.popBackStackState(FragmentManager.java:1587)
+//            at android.app.FragmentManagerImpl.popBackStackImmediate(FragmentManager.java:578)
+//            at android.support.v4.app.BaseFragmentActivityEclair.onBackPressedNotHandled(BaseFragmentActivityEclair.java:27)
+//            at android.support.v4.app.FragmentActivity.onBackPressed(FragmentActivity.java:189)
+//            Caused by: java.lang.IllegalArgumentException: Binary XML file line #16: Duplicate id 0x7f0c0059, tag null, or parent id 0xffffffff with another fragment for com.example.ddmeng.helloactivityandfragment.fragment.FragmentA
+//            at android.app.FragmentManagerImpl.onCreateView(FragmentManager.java:2205)
+//            */
+//        }
+//        return inflate;
+
         return inflater.inflate(R.layout.fragment_e, container, false);
     }
 
