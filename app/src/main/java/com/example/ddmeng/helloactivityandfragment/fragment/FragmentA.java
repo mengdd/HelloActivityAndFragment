@@ -29,7 +29,7 @@ public class FragmentA extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.i(LOG_TAG, "onCreateView()");
+        Log.i(LOG_TAG, "onCreateView(): " + savedInstanceState);
         //this super method return null
         //return super.onCreateView(inflater, container, savedInstanceState);
 
@@ -37,9 +37,21 @@ public class FragmentA extends Fragment {
     }
 
     @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Log.i(LOG_TAG, "onViewCreated(): " + savedInstanceState);
+        super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        Log.i(LOG_TAG, "onActivityCreated()");
+        Log.i(LOG_TAG, "onActivityCreated(): " + savedInstanceState);
         super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public void onViewStateRestored(Bundle savedInstanceState) {
+        Log.i(LOG_TAG, "onViewStateRestored(): " + savedInstanceState);
+        super.onViewStateRestored(savedInstanceState);
     }
 
     @Override
@@ -64,6 +76,12 @@ public class FragmentA extends Fragment {
     public void onStop() {
         Log.i(LOG_TAG, "onStop()");
         super.onStop();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(LOG_TAG, "onSaveInstanceState(): " + outState);
     }
 
     @Override

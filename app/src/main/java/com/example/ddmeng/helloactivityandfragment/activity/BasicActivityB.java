@@ -15,7 +15,7 @@ public class BasicActivityB extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(LOG_TAG, "Activity B ===" + " onCreate()");
+        Log.i(LOG_TAG, "Activity B ===" + " onCreate() " + savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.basic_activity_b);
         ButterKnife.bind(this);
@@ -47,6 +47,18 @@ public class BasicActivityB extends Activity {
     }
 
     @Override
+    public void onStateNotSaved() {
+        super.onStateNotSaved();
+        Log.d(LOG_TAG, this.getClass().getSimpleName() + " onStateNotSaved");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        Log.d(LOG_TAG, this.getClass().getSimpleName() + " onRestoreInstanceState(): " + savedInstanceState);
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
     protected void onResume() {
         Log.i(LOG_TAG, "Activity B ===" + " onResume()");
         super.onResume();
@@ -56,6 +68,12 @@ public class BasicActivityB extends Activity {
     protected void onPause() {
         Log.i(LOG_TAG, "Activity B ===" + " onPause()");
         super.onPause();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(LOG_TAG, this.getClass().getSimpleName() + " onSaveInstanceState(): " + outState);
     }
 
     @Override
