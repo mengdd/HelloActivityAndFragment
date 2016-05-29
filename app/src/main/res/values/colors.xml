@@ -13,4 +13,8 @@
     <!--Green colors-->
     <color name="apple_green">#69F0AE</color>
 
+    <!--White and Black-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
 </resources>

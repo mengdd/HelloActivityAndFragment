@@ -16,6 +16,7 @@ import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivit
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentReplacementActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentWithParametersActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsDemoActivity;
+import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInDynamicContainerActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInLayoutActivity;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 new Sample(R.string.launch_mode_demo, StandardActivity.class),
                 new Sample(R.string.basic_fragment_lifecycle, FragmentBasicActivity.class),
                 new Sample(R.string.nested_fragments_in_layout, NestedFragmentsInLayoutActivity.class),
+                new Sample(R.string.nested_fragments_in_dynamic_container, NestedFragmentsInDynamicContainerActivity.class),
                 new Sample(R.string.nested_fragments, NestedFragmentsDemoActivity.class),
                 new Sample(R.string.fragment_with_parameters, FragmentWithParametersActivity.class),
                 new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class)

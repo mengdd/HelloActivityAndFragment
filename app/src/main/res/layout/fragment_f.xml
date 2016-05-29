@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/water_melon_red"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fragment_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/fragment_f_text"
+        android:textSize="@dimen/text_size_normal" />
+
+
+    <Button
+        android:id="@+id/add_child_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_child_container"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/add_child_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add_child_fragment"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

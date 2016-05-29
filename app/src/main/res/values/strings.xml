@@ -9,6 +9,7 @@
     <string name="launch_mode_demo">Launch Mode Demo</string>
     <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
     <string name="nested_fragments_in_layout">Nested Fragment In Layout</string>
+    <string name="nested_fragments_in_dynamic_container">Nested Fragment In Dynamic Container</string>
     <string name="nested_fragments">Nested Fragments</string>
     <string name="fragment_with_parameters">Fragment With Parameters</string>
     <string name="fragment_replacement">Fragment Replacement</string>
@@ -39,6 +40,8 @@
     <string name="fragment_c_text">Fragment C</string>
     <string name="fragment_d_text">Fragment D</string>
     <string name="fragment_e_text">Fragment E</string>
+    <string name="fragment_f_text">Fragment F</string>
+    <string name="fragment_g_text">Fragment G</string>
     <string name="fragment_add_b_fragment">Click to ADD Fragment B</string>
     <string name="fragment_remove_b_fragment">Click to Remove Fragment B</string>
     <string name="title_activity_single_task">SingleTaskActivity</string>
@@ -49,5 +52,8 @@
 
     <!--Nested Fragments-->
     <string name="button_add_first_fragment_group">Add Fragment E (contains A)</string>
+    <string name="button_add_first_fragment_group_f">Add Fragment F (contains A)</string>
     <string name="button_add_second_fragment">Add Fragment D</string>
+    <string name="button_add_child_container">Add Container</string>
+    <string name="button_add_child_fragment">Add Child Fragment</string>
 </resources>
