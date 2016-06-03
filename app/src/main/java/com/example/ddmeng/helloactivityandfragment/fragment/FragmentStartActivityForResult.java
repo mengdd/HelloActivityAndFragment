@@ -29,10 +29,10 @@ public class FragmentStartActivityForResult extends AppCompatActivity {
 
     @OnClick(R.id.add_fragment)
     void addFragment() {
-        Fragment fragmentByTag = getFragmentManager().findFragmentByTag(FragmentG.LOG_TAG);
+        Fragment fragmentByTag = getFragmentManager().findFragmentByTag(FragmentG.TAG);
         if (fragmentByTag == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new FragmentG(), FragmentG.LOG_TAG).commit();
+                    .add(R.id.container, FragmentG.createInstance("parent", 12), FragmentG.TAG).commit();
         }
     }
 

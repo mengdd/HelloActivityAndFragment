@@ -2,7 +2,6 @@ package com.example.ddmeng.helloactivityandfragment.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,9 +20,22 @@ import butterknife.OnClick;
  * This fragment is to test startActivityForResult() method inside fragment and nested fragment
  */
 public class FragmentG extends Fragment {
-    public static final String LOG_TAG = FragmentG.class.getSimpleName();
-    private static final String NESTED_FRAGMENT_TAG = FragmentA.class.getSimpleName();
-    private static final int REQUEST_CODE = 333;
+    public static final String TAG = FragmentG.class.getSimpleName();
+    private String LOG_TAG = FragmentG.class.getSimpleName();
+    private static final String KEY_NAME = "name";
+    private static final String KEY_REQUEST_CODE = "request_code";
+
+    private String name;
+    private int requestCode;
+
+    public static FragmentG createInstance(String name, int requestCode) {
+        FragmentG fragmentG = new FragmentG();
+        Bundle args = new Bundle();
+        args.putString(KEY_NAME, name);
+        args.putInt(KEY_REQUEST_CODE, requestCode);
+        fragmentG.setArguments(args);
+        return fragmentG;
+    }
 
 
     @Override
@@ -34,8 +46,12 @@ public class FragmentG extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.i(LOG_TAG, "onCreate()");
         super.onCreate(savedInstanceState);
+        Bundle arguments = getArguments();
+        name = arguments.getString(KEY_NAME);
+        requestCode = arguments.getInt(KEY_REQUEST_CODE);
+        LOG_TAG = LOG_TAG + ": " + name;
+        Log.i(LOG_TAG, "onCreate()");
     }
 
     @Nullable
@@ -62,22 +78,17 @@ public class FragmentG extends Fragment {
 
     @OnClick(R.id.add_child_fragment)
     void addChildFragment() {
-
-        Fragment fragmentA = getChildFragmentManager().findFragmentByTag(NESTED_FRAGMENT_TAG);
-        if (fragmentA == null) {
-            Log.i(LOG_TAG, "add new FragmentA !!");
-            fragmentA = new FragmentA();
-            FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.frame_container, fragmentA, NESTED_FRAGMENT_TAG).commit();
-        } else {
-            Log.i(LOG_TAG, "found existing FragmentA, no need to add it again !!");
+        Fragment fragmentByTag = getChildFragmentManager().findFragmentByTag(FragmentG.TAG);
+        if (fragmentByTag == null) {
+            getChildFragmentManager().beginTransaction()
+                    .add(R.id.container, FragmentG.createInstance("child", 34), FragmentG.TAG).commit();
         }
     }
 
     @OnClick(R.id.start_activity_for_result)
     void turnToAnotherActivity() {
 
-        startActivityForResult(new Intent(getActivity(), StartForResultActivityTwo.class), REQUEST_CODE);
+        startActivityForResult(new Intent(getActivity(), StartForResultActivityTwo.class), requestCode);
     }
 
 
