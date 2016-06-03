@@ -6,6 +6,7 @@
 
     <!--Sample Names-->
     <string name="basic_activity_lifecycle">Basic Activity and Lifecycle</string>
+    <string name="start_activity_for_result_demo">Start Activity For Result</string>
     <string name="launch_mode_demo">Launch Mode Demo</string>
     <string name="basic_fragment_lifecycle">Basic Fragment and Lifecycle</string>
     <string name="nested_fragments_in_layout">Nested Fragment In Layout</string>
@@ -21,6 +22,13 @@
     <string name="basic_turn_to_activity_b">Turn to Activity B</string>
     <string name="basic_turn_to_activity_a">Turn to Activity A</string>
     <string name="basic_finish_button">Finish This Activity</string>
+
+    <!--Start Activity For Result-->
+    <string name="start_activity_for_result">Start Activity For Result</string>
+    <string name="start_activity_for_result_activity_1">Activity 1</string>
+    <string name="start_activity_for_result_activity_2">Activity 2</string>
+    <string name="start_activity_for_result_set_ok">Set OK</string>
+    <string name="start_activity_for_result_set_cancel">Set Cancel</string>
 
     <!--Launch Mode-->
     <string name="launch_mode_standard">Standard</string>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_activity_for_result_activity_2"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/set_result_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_activity_for_result_set_ok"
+        android:textSize="@dimen/text_size_normal" />
+
+    <Button
+        android:id="@+id/set_result_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_activity_for_result_set_cancel"
+        android:textSize="@dimen/text_size_normal" />
+
+</LinearLayout>

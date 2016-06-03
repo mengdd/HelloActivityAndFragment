@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
+import com.example.ddmeng.helloactivityandfragment.activity.StartForResultActivityOne;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentReplacementActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentWithParametersActivity;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         mSamples = new Sample[]{
                 new Sample(R.string.basic_activity_lifecycle, BasicActivityA.class),
+                new Sample(R.string.start_activity_for_result_demo, StartForResultActivityOne.class),
                 new Sample(R.string.launch_mode_demo, StandardActivity.class),
                 new Sample(R.string.basic_fragment_lifecycle, FragmentBasicActivity.class),
                 new Sample(R.string.nested_fragments_in_layout, NestedFragmentsInLayoutActivity.class),
