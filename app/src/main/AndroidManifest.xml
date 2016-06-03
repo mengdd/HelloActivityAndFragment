@@ -43,6 +43,7 @@
             android:launchMode="singleInstance" />
         <activity android:name=".activity.StartForResultActivityOne"></activity>
         <activity android:name=".activity.StartForResultActivityTwo"></activity>
+        <activity android:name=".fragment.FragmentStartActivityForResult"></activity>
     </application>
 
 </manifest>

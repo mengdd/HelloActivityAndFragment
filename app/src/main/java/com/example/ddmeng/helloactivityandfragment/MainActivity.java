@@ -15,6 +15,7 @@ import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
 import com.example.ddmeng.helloactivityandfragment.activity.StartForResultActivityOne;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentReplacementActivity;
+import com.example.ddmeng.helloactivityandfragment.fragment.FragmentStartActivityForResult;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentWithParametersActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsDemoActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInDynamicContainerActivity;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 new Sample(R.string.nested_fragments_in_dynamic_container, NestedFragmentsInDynamicContainerActivity.class),
                 new Sample(R.string.nested_fragments, NestedFragmentsDemoActivity.class),
                 new Sample(R.string.fragment_with_parameters, FragmentWithParametersActivity.class),
-                new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class)
+                new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class),
+                new Sample(R.string.fragment_start_activity_for_result_demo, FragmentStartActivityForResult.class)
         };
 
         mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));
