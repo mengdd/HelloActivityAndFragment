@@ -78,7 +78,7 @@ public class Tab2Fragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.i(TAG, "onSaveInstanceState(): " + outState);
+        Log.e(TAG, "onSaveInstanceState(): " + outState);
     }
 
     @Override

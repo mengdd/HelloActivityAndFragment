@@ -42,7 +42,7 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        Log.i(TAG, "onRestoreInstanceState(): " + savedInstanceState);
+        Log.e(TAG, "onRestoreInstanceState(): " + savedInstanceState);
         super.onRestoreInstanceState(savedInstanceState);
     }
 
@@ -61,7 +61,7 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.i(TAG, "onSaveInstanceState(): " + outState);
+        Log.e(TAG, "onSaveInstanceState(): " + outState);
     }
 
     @Override
