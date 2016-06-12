@@ -1,5 +1,6 @@
 package com.example.ddmeng.helloactivityandfragment.state;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import butterknife.OnClick;
 public class StateRestoreDemoActivity extends AppCompatActivity {
 
     public static final String TAG = StateRestoreDemoActivity.class.getSimpleName();
+    private Fragment tab1Fragment;
+    private Fragment tab2Fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,8 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state_restore_demo);
         ButterKnife.bind(this);
+
+        initFragments();
     }
 
     @Override
@@ -68,5 +73,31 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
     @OnClick(R.id.button_open_another_activity)
     void onOpenAnotherActivity() {
         startActivity(new Intent(this, BasicActivityA.class));
+    }
+
+    @OnClick(R.id.tab1)
+    void onTab1Clicked() {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_container, tab1Fragment, Tab1Fragment.TAG)
+                .commit();
+    }
+
+    @OnClick(R.id.tab2)
+    void onTab2Clicked() {
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_container, tab2Fragment, Tab2Fragment.TAG)
+                .commit();
+
+    }
+
+    private void initFragments() {
+        tab1Fragment = getFragmentManager().findFragmentByTag(Tab1Fragment.TAG);
+        if (tab1Fragment == null) {
+            tab1Fragment = new Tab1Fragment();
+        }
+        tab2Fragment = getFragmentManager().findFragmentByTag(Tab2Fragment.TAG);
+        if (tab2Fragment == null) {
+            tab2Fragment = new Tab2Fragment();
+        }
     }
 }
