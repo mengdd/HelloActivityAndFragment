@@ -41,9 +41,10 @@
             android:name=".launchmode.SingleInstanceActivity"
             android:label="@string/title_activity_single_instance"
             android:launchMode="singleInstance" />
-        <activity android:name=".activity.StartForResultActivityOne"></activity>
-        <activity android:name=".activity.StartForResultActivityTwo"></activity>
-        <activity android:name=".fragment.FragmentStartActivityForResult"></activity>
+        <activity android:name=".activity.StartForResultActivityOne" />
+        <activity android:name=".activity.StartForResultActivityTwo" />
+        <activity android:name=".fragment.FragmentStartActivityForResult" />
+        <activity android:name=".state.StateRestoreDemoActivity"></activity>
     </application>
 
 </manifest>

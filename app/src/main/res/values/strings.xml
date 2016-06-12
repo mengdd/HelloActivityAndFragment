@@ -15,6 +15,7 @@
     <string name="fragment_with_parameters">Fragment With Parameters</string>
     <string name="fragment_replacement">Fragment Replacement</string>
     <string name="fragment_start_activity_for_result_demo">Fragment Start Activity For Result</string>
+    <string name="state_restore_demo">State Restore Demo</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -72,4 +73,7 @@
     <string name="button_add_second_fragment">Add Fragment D</string>
     <string name="button_add_child_container">Add Container</string>
     <string name="button_add_child_fragment">Add Child Fragment</string>
+
+    <!--State Restore demo-->
+    <string name="state_demo_open_another_activity">Open Another Activity</string>
 </resources>
