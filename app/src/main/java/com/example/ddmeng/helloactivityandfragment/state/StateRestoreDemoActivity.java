@@ -15,6 +15,9 @@ import butterknife.OnClick;
 public class StateRestoreDemoActivity extends AppCompatActivity {
 
     public static final String TAG = StateRestoreDemoActivity.class.getSimpleName();
+
+    // 如果我们保存了Fragment的引用, 并且只new一次, tab2的状态是会自动保存并恢复的
+    // tab1中的状态没有恢复是因为View没有id
     private Fragment tab1Fragment;
     private Fragment tab2Fragment;
 
