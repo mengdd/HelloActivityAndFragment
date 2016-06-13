@@ -8,11 +8,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnTextChanged;
+
 public class Tab2Fragment extends Fragment {
     public static final String TAG = Tab2Fragment.class.getSimpleName();
+
+    @BindView(R.id.tab2_input)
+    EditText input;
 
     @Override
     public void onAttach(Activity activity) {
@@ -22,7 +30,7 @@ public class Tab2Fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate()");
+        Log.i(TAG, "onCreate(): " + hashCode());
         super.onCreate(savedInstanceState);
     }
 
@@ -37,6 +45,9 @@ public class Tab2Fragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Log.i(TAG, "onViewCreated(): " + savedInstanceState);
         super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+        // if we set this to be false, the EditText value will not be restored even with id
+//        input.setSaveEnabled(false);
     }
 
     @Override
@@ -97,5 +108,10 @@ public class Tab2Fragment extends Fragment {
     public void onDetach() {
         Log.i(TAG, "onDetach()");
         super.onDetach();
+    }
+
+    @OnTextChanged(R.id.tab2_input)
+    void onInputChanged(CharSequence s, int start, int before, int count) {
+        Log.i(TAG, "onInputChanged(): " + s);
     }
 }

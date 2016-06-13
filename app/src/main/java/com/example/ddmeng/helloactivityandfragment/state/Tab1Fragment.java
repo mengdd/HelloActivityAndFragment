@@ -22,7 +22,7 @@ public class Tab1Fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate()");
+        Log.i(TAG, "onCreate() " + hashCode());
         super.onCreate(savedInstanceState);
     }
 
