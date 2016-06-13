@@ -28,7 +28,7 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_state_restore_demo);
         ButterKnife.bind(this);
 
-        initFragments();
+//        initFragments();
     }
 
     @Override
@@ -81,15 +81,16 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
     @OnClick(R.id.tab1)
     void onTab1Clicked() {
         getFragmentManager().beginTransaction()
-                .replace(R.id.content_container, tab1Fragment, Tab1Fragment.TAG)
+                .replace(R.id.content_container, new Tab1Fragment(), Tab1Fragment.TAG)
                 .commit();
     }
 
     @OnClick(R.id.tab2)
     void onTab2Clicked() {
         getFragmentManager().beginTransaction()
-                .replace(R.id.content_container, tab2Fragment, Tab2Fragment.TAG)
+                .replace(R.id.content_container, new Tab2Fragment(), Tab2Fragment.TAG)
                 .commit();
+        // 如果我们每次都传入新的实例, 则上一个实例的状态是无法传到新的实例的
 
     }
 
