@@ -61,7 +61,11 @@ public class Tab2Fragment extends Fragment {
 //        input.setSaveEnabled(false);
 
         initWebView();
-        webView.loadUrl(TEST_URL);
+        if (savedInstanceState != null) {
+            webView.restoreState(savedInstanceState);
+        } else {
+            webView.loadUrl(TEST_URL);
+        }
     }
 
     @SuppressLint("JavascriptInterface")
@@ -137,6 +141,7 @@ public class Tab2Fragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.e(TAG, "onSaveInstanceState(): " + outState);
+        webView.saveState(outState);
     }
 
     @Override
