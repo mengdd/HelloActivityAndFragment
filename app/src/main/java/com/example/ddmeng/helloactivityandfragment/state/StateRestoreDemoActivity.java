@@ -1,8 +1,8 @@
 package com.example.ddmeng.helloactivityandfragment.state;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -80,14 +80,14 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
 
     @OnClick(R.id.tab1)
     void onTab1Clicked() {
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_container, new Tab1Fragment(), Tab1Fragment.TAG)
                 .commit();
     }
 
     @OnClick(R.id.tab2)
     void onTab2Clicked() {
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_container, new Tab2Fragment(), Tab2Fragment.TAG)
                 .commit();
         // 如果我们每次都传入新的实例, 则上一个实例的状态是无法传到新的实例的
@@ -95,11 +95,11 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
     }
 
     private void initFragments() {
-        tab1Fragment = getFragmentManager().findFragmentByTag(Tab1Fragment.TAG);
+        tab1Fragment = getSupportFragmentManager().findFragmentByTag(Tab1Fragment.TAG);
         if (tab1Fragment == null) {
             tab1Fragment = new Tab1Fragment();
         }
-        tab2Fragment = getFragmentManager().findFragmentByTag(Tab2Fragment.TAG);
+        tab2Fragment = getSupportFragmentManager().findFragmentByTag(Tab2Fragment.TAG);
         if (tab2Fragment == null) {
             tab2Fragment = new Tab2Fragment();
         }
