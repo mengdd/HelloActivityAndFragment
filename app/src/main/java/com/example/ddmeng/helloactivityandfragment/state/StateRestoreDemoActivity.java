@@ -122,6 +122,15 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
 
     }
 
+    @OnClick(R.id.button_add_detail_fragment)
+    void addDetail() {
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_container, new DetailFragment(), Tab2Fragment.TAG)
+                .addToBackStack(DetailFragment.TAG)
+                .commit();
+    }
+
     private void saveFragmentState(int index, Fragment fragment) {
         Fragment.SavedState savedState = getSupportFragmentManager().saveFragmentInstanceState(fragment);
         savedStateSparseArray.put(index, savedState);

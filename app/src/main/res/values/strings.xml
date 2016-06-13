@@ -76,8 +76,10 @@
 
     <!--State Restore demo-->
     <string name="state_demo_open_another_activity">Open Another Activity</string>
+    <string name="state_demo_add_detail_fragment">Add Detail Fragment</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="fragment_tab_1">Tab 1 Fragment</string>
     <string name="fragment_tab_2">Tab 2 Fragment</string>
+    <string name="fragment_detail">Detail Fragment</string>
 </resources>
