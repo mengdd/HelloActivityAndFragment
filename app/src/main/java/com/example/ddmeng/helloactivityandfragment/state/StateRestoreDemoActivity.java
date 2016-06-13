@@ -5,16 +5,22 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.SparseArray;
 
 import com.example.ddmeng.helloactivityandfragment.R;
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import icepick.Icepick;
+import icepick.State;
 
 public class StateRestoreDemoActivity extends AppCompatActivity {
 
     public static final String TAG = StateRestoreDemoActivity.class.getSimpleName();
+
+    @State
+    SparseArray<Fragment.SavedState> savedStateSparseArray = new SparseArray<>();
 
     // 如果我们保存了Fragment的引用, 并且只new一次, tab2的状态是会自动保存并恢复的
     // tab1中的状态没有恢复是因为View没有id
@@ -28,6 +34,7 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_state_restore_demo);
         ButterKnife.bind(this);
 
+        Icepick.restoreInstanceState(this, savedInstanceState);
 //        initFragments();
     }
 
@@ -65,6 +72,7 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.e(TAG, "onSaveInstanceState(): " + outState);
+        Icepick.saveInstanceState(this, outState);
     }
 
     @Override
@@ -80,18 +88,48 @@ public class StateRestoreDemoActivity extends AppCompatActivity {
 
     @OnClick(R.id.tab1)
     void onTab1Clicked() {
+        // save current tab
+        Fragment tab2Fragment = getSupportFragmentManager().findFragmentByTag(Tab2Fragment.TAG);
+        if (tab2Fragment != null) {
+            saveFragmentState(1, tab2Fragment);
+        }
+
+        // restore last state
+        Tab1Fragment tab1Fragment = new Tab1Fragment();
+        restoreFragmentState(0, tab1Fragment);
+
+        // show new tab
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_container, new Tab1Fragment(), Tab1Fragment.TAG)
+                .replace(R.id.content_container, tab1Fragment, Tab1Fragment.TAG)
                 .commit();
     }
 
     @OnClick(R.id.tab2)
     void onTab2Clicked() {
+        Fragment tab1Fragment = getSupportFragmentManager().findFragmentByTag(Tab1Fragment.TAG);
+        if (tab1Fragment != null) {
+            saveFragmentState(0, tab1Fragment);
+        }
+
+        Tab2Fragment tab2Fragment = new Tab2Fragment();
+        restoreFragmentState(1, tab2Fragment);
+
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_container, new Tab2Fragment(), Tab2Fragment.TAG)
+                .replace(R.id.content_container, tab2Fragment, Tab2Fragment.TAG)
                 .commit();
         // 如果我们每次都传入新的实例, 则上一个实例的状态是无法传到新的实例的
+        // 所以我们需要手动保存和恢复
 
+    }
+
+    private void saveFragmentState(int index, Fragment fragment) {
+        Fragment.SavedState savedState = getSupportFragmentManager().saveFragmentInstanceState(fragment);
+        savedStateSparseArray.put(index, savedState);
+    }
+
+    private void restoreFragmentState(int index, Fragment fragment) {
+        Fragment.SavedState savedState = savedStateSparseArray.get(index);
+        fragment.setInitialSavedState(savedState);
     }
 
     private void initFragments() {
