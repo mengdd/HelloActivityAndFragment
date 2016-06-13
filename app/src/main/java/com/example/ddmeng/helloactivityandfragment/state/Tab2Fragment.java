@@ -32,6 +32,7 @@ public class Tab2Fragment extends Fragment {
     EditText input;
     @BindView(R.id.tab2_webview)
     WebView webView;
+    private Bundle webViewState;
 
     @Override
     public void onAttach(Activity activity) {
@@ -61,9 +62,14 @@ public class Tab2Fragment extends Fragment {
 //        input.setSaveEnabled(false);
 
         initWebView();
-        if (savedInstanceState != null) {
+        if (webViewState != null) {
+            //Fragment实例并未被销毁, 重新create view
+            webView.restoreState(webViewState);
+        } else if (savedInstanceState != null) {
+            //Fragment实例被销毁重建
             webView.restoreState(savedInstanceState);
         } else {
+            //全新Fragment
             webView.loadUrl(TEST_URL);
         }
     }
@@ -129,6 +135,10 @@ public class Tab2Fragment extends Fragment {
         Log.i(TAG, "onPause()");
         super.onPause();
         webView.onPause();
+
+        //Fragment不被销毁(Fragment被加入back stack)的情况下, 依靠Fragment中的成员变量保存WebView状态
+        webViewState = new Bundle();
+        webView.saveState(webViewState);
     }
 
     @Override
@@ -141,6 +151,7 @@ public class Tab2Fragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         Log.e(TAG, "onSaveInstanceState(): " + outState);
+        //Fragment被销毁的情况, 依靠outState保存WebView状态
         webView.saveState(outState);
     }
 
