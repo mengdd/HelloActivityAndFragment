@@ -152,7 +152,9 @@ public class Tab2Fragment extends Fragment {
         super.onSaveInstanceState(outState);
         Log.e(TAG, "onSaveInstanceState(): " + outState);
         //Fragment被销毁的情况, 依靠outState保存WebView状态
-        webView.saveState(outState);
+        if (webView != null) {
+            webView.saveState(outState);
+        }
     }
 
     @Override
