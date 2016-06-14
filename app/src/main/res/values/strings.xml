@@ -90,4 +90,6 @@
     <string name="action_favourite">Action Favourite</string>
     <string name="button_show_fragment">Show Fragment</string>
     <string name="button_show_child_fragment">Show Child Fragment</string>
+    <string name="fragment_parent">Parent Fragment</string>
+    <string name="fragment_child">Child Fragment</string>
 </resources>

@@ -11,6 +11,7 @@ import com.example.ddmeng.helloactivityandfragment.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ToolbarDemoActivity extends AppCompatActivity {
     public static final String TAG = ToolbarDemoActivity.class.getSimpleName();
@@ -32,7 +33,7 @@ public class ToolbarDemoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        Log.i(TAG, "onCreateOptionsMenu()");
+        Log.e(TAG, "onCreateOptionsMenu()");
         getMenuInflater().inflate(R.menu.menu_activity_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -52,5 +53,14 @@ public class ToolbarDemoActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @OnClick(R.id.button_show_fragment)
+    void showFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new ToolbarFragment(), ToolbarFragment.TAG)
+                .addToBackStack(ToolbarFragment.TAG)
+                .commit();
+        // android.R.id.content get the root view for the current activity
     }
 }
