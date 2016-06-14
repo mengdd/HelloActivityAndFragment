@@ -22,6 +22,7 @@ import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInDyn
 import com.example.ddmeng.helloactivityandfragment.fragment.NestedFragmentsInLayoutActivity;
 import com.example.ddmeng.helloactivityandfragment.launchmode.StandardActivity;
 import com.example.ddmeng.helloactivityandfragment.state.StateRestoreDemoActivity;
+import com.example.ddmeng.helloactivityandfragment.toolbar.ToolbarDemoActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                 new Sample(R.string.fragment_with_parameters, FragmentWithParametersActivity.class),
                 new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class),
                 new Sample(R.string.fragment_start_activity_for_result_demo, FragmentStartActivityForResult.class),
-                new Sample(R.string.state_restore_demo, StateRestoreDemoActivity.class)
+                new Sample(R.string.state_restore_demo, StateRestoreDemoActivity.class),
+                new Sample(R.string.toolbar_demo, ToolbarDemoActivity.class)
         };
 
         mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));

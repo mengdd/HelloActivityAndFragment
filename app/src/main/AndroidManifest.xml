@@ -45,7 +45,8 @@
         <activity android:name=".activity.StartForResultActivityOne" />
         <activity android:name=".activity.StartForResultActivityTwo" />
         <activity android:name=".fragment.FragmentStartActivityForResult" />
-        <activity android:name=".state.StateRestoreDemoActivity"></activity>
+        <activity android:name=".state.StateRestoreDemoActivity" />
+        <activity android:name=".toolbar.ToolbarDemoActivity"></activity>
     </application>
 
 </manifest>
