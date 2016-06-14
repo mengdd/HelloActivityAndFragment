@@ -17,10 +17,9 @@ import com.example.ddmeng.helloactivityandfragment.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class ToolbarFragment extends Fragment {
-    public static final String TAG = ToolbarFragment.class.getSimpleName();
+public class ToolbarChildFragment extends Fragment {
+    public static final String TAG = ToolbarChildFragment.class.getSimpleName();
 
     @BindView(R.id.fragment_toolbar)
     Toolbar toolbar;
@@ -29,7 +28,7 @@ public class ToolbarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView() " + savedInstanceState);
-        return inflater.inflate(R.layout.toolbar_fragment, container, false);
+        return inflater.inflate(R.layout.toolbar_child_fragment, container, false);
     }
 
     @Override
@@ -46,7 +45,7 @@ public class ToolbarFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         Log.e(TAG, "onCreateOptionsMenu()");
         menu.clear();
-        inflater.inflate(R.menu.menu_parent_fragment, menu);
+        inflater.inflate(R.menu.menu_child_fragment, menu);
     }
 
     @Override
@@ -95,14 +94,5 @@ public class ToolbarFragment extends Fragment {
     public void onDetach() {
         Log.i(TAG, "onDetach()");
         super.onDetach();
-    }
-
-    @OnClick(R.id.button_show_child_fragment)
-    void showChildFragment() {
-        getChildFragmentManager()
-                .beginTransaction()
-                .add(R.id.parent_fragment_root, new ToolbarChildFragment(), ToolbarChildFragment.TAG)
-                .addToBackStack(ToolbarChildFragment.TAG)
-                .commit();
     }
 }
