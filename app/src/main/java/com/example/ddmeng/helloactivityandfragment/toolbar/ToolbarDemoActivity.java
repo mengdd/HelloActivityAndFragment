@@ -24,6 +24,10 @@ public class ToolbarDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_toolbar_demo);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+
+        // add a left arrow to back to parent activity,
+        // no need to handle action selected event, this is handled by super
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
