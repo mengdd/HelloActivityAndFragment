@@ -31,5 +31,12 @@
             android:text="@string/button_show_child_fragment"
             android:textSize="@dimen/text_size_normal" />
 
+        <Button
+            android:id="@+id/button_update_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_update_title"
+            android:textSize="@dimen/text_size_normal" />
+
     </LinearLayout>
 </RelativeLayout>

@@ -109,6 +109,13 @@ public class ToolbarFragment extends Fragment {
                 .commit();
     }
 
+    int count = 0;
+
+    @OnClick(R.id.button_update_title)
+    void updateTitle() {
+        toolbar.setTitle("Parent title: " + count++);
+    }
+
     public boolean onBackPressed() {
         return getChildFragmentManager().popBackStackImmediate();
     }
