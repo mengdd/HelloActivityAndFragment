@@ -47,7 +47,9 @@ public class ToolbarFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         Log.e(TAG, "onCreateOptionsMenu()");
         menu.clear();
-        inflater.inflate(R.menu.menu_parent_fragment, menu);
+        if (getChildFragmentManager().getBackStackEntryCount() == 0) {
+            inflater.inflate(R.menu.menu_parent_fragment, menu);
+        }
     }
 
     @Override

@@ -41,19 +41,19 @@ public class ToolbarChildFragment extends Fragment {
         toolbar.setTitle("Child Fragment");
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
     }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        Log.e(TAG, "onCreateOptionsMenu()");
-        menu.clear();
-        inflater.inflate(R.menu.menu_child_fragment, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Log.e(TAG, "onOptionsItemSelected()");
-        return super.onOptionsItemSelected(item);
-    }
+//
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        Log.e(TAG, "onCreateOptionsMenu()");
+//        menu.clear();
+//        inflater.inflate(R.menu.menu_child_fragment, menu);
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        Log.e(TAG, "onOptionsItemSelected()");
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public void onResume() {
