@@ -1,6 +1,7 @@
 package com.example.ddmeng.helloactivityandfragment.toolbar;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -62,5 +63,16 @@ public class ToolbarDemoActivity extends AppCompatActivity {
                 .addToBackStack(ToolbarFragment.TAG)
                 .commit();
         // android.R.id.content get the root view for the current activity
+    }
+
+    @Override
+    public void onBackPressed() {
+        Fragment fragment = getSupportFragmentManager().findFragmentById(android.R.id.content);
+        if (fragment instanceof ToolbarFragment) {
+            if (((ToolbarFragment) fragment).onBackPressed()) {
+                return;
+            }
+        }
+        super.onBackPressed();
     }
 }

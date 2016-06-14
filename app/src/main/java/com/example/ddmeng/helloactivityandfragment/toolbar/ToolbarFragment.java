@@ -39,6 +39,7 @@ public class ToolbarFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         setHasOptionsMenu(true);
+        toolbar.setTitle("Parent Fragment");
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
     }
 
@@ -104,5 +105,9 @@ public class ToolbarFragment extends Fragment {
                 .add(R.id.parent_fragment_root, new ToolbarChildFragment(), ToolbarChildFragment.TAG)
                 .addToBackStack(ToolbarChildFragment.TAG)
                 .commit();
+    }
+
+    public boolean onBackPressed() {
+        return getChildFragmentManager().popBackStackImmediate();
     }
 }

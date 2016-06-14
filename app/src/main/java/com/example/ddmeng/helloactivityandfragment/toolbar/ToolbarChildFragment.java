@@ -38,6 +38,7 @@ public class ToolbarChildFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         setHasOptionsMenu(true);
+        toolbar.setTitle("Child Fragment");
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
     }
 
