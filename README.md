@@ -20,3 +20,5 @@ With it you can:
 [Android Fragment使用(二) 嵌套Fragments (Nested Fragments) 的使用及常见错误](http://www.cnblogs.com/mengdd/p/5552721.html)
 
 [Android Fragment使用(三) Activity, Fragment, WebView的状态保存和恢复](http://www.cnblogs.com/mengdd/p/5582244.html)
+
+[Android Fragment使用(四) Toolbar使用及Fragment中的Toolbar处理](http://www.cnblogs.com/mengdd/p/5590634.html)
