@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.example.ddmeng.helloactivityandfragment"
         minSdkVersion 17
-        targetSdkVersion 23
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
     }
@@ -21,10 +20,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.jakewharton:butterknife:8.0.1'
-    compile "frankiesardo:icepick:3.2.0"
-    provided 'frankiesardo:icepick-processor:3.2.0'
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation "frankiesardo:icepick:3.2.0"
+    annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }
