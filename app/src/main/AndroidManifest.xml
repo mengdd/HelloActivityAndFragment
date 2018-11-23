@@ -49,6 +49,7 @@
         <activity
             android:name=".toolbar.ToolbarDemoActivity"
             android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".fragment.BackStackTestActivity" />
     </application>
 
 </manifest>

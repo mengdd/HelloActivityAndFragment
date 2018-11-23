@@ -13,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.ddmeng.helloactivityandfragment.activity.BasicActivityA;
 import com.example.ddmeng.helloactivityandfragment.activity.StartForResultActivityOne;
+import com.example.ddmeng.helloactivityandfragment.fragment.BackStackTestActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentBasicActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentReplacementActivity;
 import com.example.ddmeng.helloactivityandfragment.fragment.FragmentStartActivityForResult;
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 new Sample(R.string.fragment_replacement, FragmentReplacementActivity.class),
                 new Sample(R.string.fragment_start_activity_for_result_demo, FragmentStartActivityForResult.class),
                 new Sample(R.string.state_restore_demo, StateRestoreDemoActivity.class),
-                new Sample(R.string.toolbar_demo, ToolbarDemoActivity.class)
+                new Sample(R.string.toolbar_demo, ToolbarDemoActivity.class),
+                new Sample(R.string.back_stack_test_demo, BackStackTestActivity.class)
         };
 
         mListView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, android.R.id.text1, mSamples));

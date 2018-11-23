@@ -17,6 +17,7 @@
     <string name="fragment_start_activity_for_result_demo">Fragment Start Activity For Result</string>
     <string name="state_restore_demo">State Restore Demo</string>
     <string name="toolbar_demo">Toolbar Demo</string>
+    <string name="back_stack_test_demo">Back Stack Test Demo</string>
 
 
     <!--Basic Activity And Lifecycle-->
@@ -93,4 +94,7 @@
     <string name="button_update_title">Update Title</string>
     <string name="fragment_parent">Parent Fragment</string>
     <string name="fragment_child">Child Fragment</string>
+
+    <!--Back Stack Test-->
+    <string name="replace_fragment">Replace Fragment</string>
 </resources>
